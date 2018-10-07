@@ -26,7 +26,7 @@ func! CompileRunGcc()
 	endif
 endfunc
 
-" Quickly Run By g+r
+" Quickly Compile By g+b, Run By g+r
 nmap gb : call CompileGcc()<CR>
 func! CompileGcc()
 	" exec "w"
@@ -34,8 +34,7 @@ func! CompileGcc()
 		:AsyncRun gcc -Wall -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" 
 		" :AsyncRun -raw -cwd=$(VIM_FILEDIR) "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" 
 	elseif &filetype == 'cpp'
-		exec "!g++ % -o %<"
-		exec "!time ./%<"
+		:AsyncRun make
 	elseif &filetype == 'java'
 		exec "!javac %"
 		exec "!time java %<"
@@ -60,8 +59,7 @@ func! RunGcc()
 	if &filetype == 'c'
 		:AsyncRun -raw -cwd=$(VIM_FILEDIR) "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" 
 	elseif &filetype == 'cpp'
-		exec "!g++ % -o %<"
-		exec "!time ./%<"
+		:AsyncRun make run
 	elseif &filetype == 'java'
 		exec "!javac %"
 		exec "!time java %<"

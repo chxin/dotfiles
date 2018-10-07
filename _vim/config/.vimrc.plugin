@@ -101,24 +101,24 @@ let g:asyncrun_bell = 1
 " let g:ale_lint_delay = 500
 let g:ale_echo_msg_format = '[%linter%] %code: %%s'
 let g:ale_lint_on_text_changed = 'normal'
-" let g:ale_lint_on_insert_leave = 1
-" let g:airline#extensions#ale#enabled = 1
-" let g:ale_c_gcc_options = '-Wall -O2 -std=c99'
-" let g:ale_cpp_gcc_options = '-Wall -O2 -std=c++14'
-" let g:ale_c_cppcheck_options = ''
-" let g:ale_cpp_cppcheck_options = ''
-" let g:ale_emit_conflict_warnings = 1
-"
+let g:ale_lint_on_insert_leave = 1
+let g:airline#extensions#ale#enabled = 1
+let g:ale_c_gcc_options = '-Wall -O2 -std=c99'
+let g:ale_cpp_gcc_options = '-Wall -O2 -std=c++14'
+let g:ale_c_cppcheck_options = ''
+let g:ale_cpp_cppcheck_options = ''
+let g:ale_emit_conflict_warnings = 1
+
 "" plugin signify
-let g:signify_vcs_cmds_diffmode = {
-      \ 'git':      'git show HEAD:./%f',
-      \ 'hg':       'hg cat %f',
-      \ 'svn':      'svn cat %f',
-      \ 'bzr':      'bzr cat %f',
-      \ 'darcs':    'darcs show contents -- %f',
-      \ 'cvs':      'cvs up -p -- %f 2>%n',
-      \ 'perforce': 'p4 print %f',
-      \ }
+" let g:signify_vcs_cmds_diffmode = {
+"       \ 'git':      'git show HEAD:./%f',
+"       \ 'hg':       'hg cat %f',
+"       \ 'svn':      'svn cat %f',
+"       \ 'bzr':      'bzr cat %f',
+"       \ 'darcs':    'darcs show contents -- %f',
+"       \ 'cvs':      'cvs up -p -- %f 2>%n',
+"       \ 'perforce': 'p4 print %f',
+"       \ }
 
 "" plugin echodoc
 set noshowmode
