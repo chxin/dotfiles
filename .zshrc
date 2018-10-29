@@ -66,7 +66,7 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git wd z web-search history zsh-syntax-highlighting zsh-autosuggestions vi-mode
+  git wd z web-search history zsh-syntax-highlighting zsh-autosuggestions history-substring-search vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
