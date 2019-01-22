@@ -6,6 +6,12 @@
 
 # Hide user@hostname in theme agnoster
 	export DEFAULT_USER="xin"
+	prompt_context() {
+		if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+#			if hide "user", comment the following one
+			prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
+		fi
+	}
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -27,7 +33,7 @@ ZSH_THEME="agnoster"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+  DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -66,7 +72,8 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git wd z web-search history zsh-syntax-highlighting zsh-autosuggestions history-substring-search vi-mode
+  git wd z web-search history zsh-syntax-highlighting zsh-autosuggestions history-substring-search 
+	# vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
